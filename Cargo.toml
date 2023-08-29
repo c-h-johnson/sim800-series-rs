@@ -1,0 +1,25 @@
+[package]
+name = "sim800-series"
+description = "An embedded-hal driver for the the SIMCom SIM800 Series (including SIM800, SIM800W, SIM800V, SIM800L and SIM800H)"
+version = "0.1.0"
+license = "Apache-2.0 OR MIT"
+authors = [
+    "Charles Johnson <charles@charlesjohnson.name>",
+]
+keywords = [
+    "embedded-hal-driver",
+]
+repository = "https://github.com/c-h-johnson/sim800-series-rs"
+edition = "2021"
+
+[dependencies]
+atat = {path = "../atat/atat"}
+heapless = {version="0.7", features = ["ufmt-impl"]}
+heapless-bytes = "0.3"
+embedded-io = "0.5"
+embedded-hal = {version = "0.2.7", features = ["unproven"]}
+nb = "1.0.*"
+serde = { version = "1.0", default-features = false, features = ["derive"] }
+ufmt = "0.2.0"
+enumscribe = {version = "0.3", default-features = false, features = ["derive_serde"]}
+convert_by_name = "0.0.4"
