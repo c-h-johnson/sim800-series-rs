@@ -77,8 +77,8 @@ pub enum Urc {
     #[at_urc("+DST")]
     RefreshNetworkDst,
     /// Indicates whether SIM card has been inserted
-    #[at_urc("+CSMINS")]
-    SimCardInserted,
+    // #[at_urc("+CSMINS")]
+    // SimCardInserted,
     /// Indicates whether a CS voice call, CS data has been terminated
     #[at_urc("+CDRIND")]
     CsTerminated,
@@ -139,9 +139,12 @@ pub enum Urc {
     // /// Power on procedure is completed, and the module is ready to operate at fixed baud rate (This URC does not appear when auto-bauding function is active)
     // #[at_urc("RDY")]
     // Ready,
-    // /// Module is powered on and phonebook initialization procedure is over
-    // #[at_urc("Call Ready")]
-    // CallReady,
+    /// Module is powered on and phonebook initialization procedure is over
+    #[at_urc("Call Ready")]
+    CallReady,
+    /// This is not documented but does appear after `CallReady`
+    #[at_urc("SMS Ready")]
+    SmsReady,
     // /// Phone functionality indication (This URC does not appear when auto-bauding function is active)
     // #[at_urc("+CFUN")]
     // PhoneFunctionality,
